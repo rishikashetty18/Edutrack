@@ -16,7 +16,7 @@ $isFaculty = isset($_SESSION['username']) && $_SESSION['username'] === 'faculty'
 $classOfStudents=isset($_POST['classOfStudent'])?$_POST['classOfStudent']:'First BCA';//setting default val if unset
 
 
-$subject=isset($_POST['subject'])?$_POST['classOfStudent']:'C Programming';//setting default val if unset
+$subject=isset($_POST['subject'])?$_POST['classOfStudent']:'Java';//setting default val if unset
 echo "<h2> $classOfStudents - $subject </h2>";
 if(isset($_POST['save']))
 {
@@ -63,7 +63,7 @@ if($result)echo "<script>alert('Inserted');</script>";
 $classesToDisplay = "'$classOfStudents'";
 
 // SQL query to fetch student details for specific classes
- $sql="select * from students where class='$classOfStudents' and subject='$subject'";
+ $sql="select * from students where class='$classOfStudents' ";
 $result = $con->query($sql);
 
 // Check if the query was successful
